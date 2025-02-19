@@ -127,7 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Flat.cpp" />
+    <ClCompile Include="Fraction.cpp" />
+    <ClCompile Include="Human.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Flat.hpp" />
+    <ClInclude Include="Fraction.hpp" />
+    <ClInclude Include="Human.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -80,7 +80,10 @@ Fraction operator+(const Fraction& lsv, const Fraction& rsv)
 	}
 	else
 	{
-
+		Fraction result;
+		result.den = lsv.den * rsv.den;
+		result.num = lsv.num * rsv.den + rsv.num * lsv.den;
+		return result;
 	}
 }
 

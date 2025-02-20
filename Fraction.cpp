@@ -90,17 +90,48 @@ Fraction operator+(const Fraction& lsv, const Fraction& rsv)
 
 Fraction operator-(const Fraction& lsv, const Fraction& rsv)
 {
-	// TODO: вставьте здесь оператор return
+	if (lsv.den == rsv.den)
+	{
+		Fraction result({ lsv.num + rsv.num }, lsv.den);
+		return result;
+	}
+	else
+	{
+		Fraction result;
+		result.den = lsv.den * rsv.den;
+		result.num = lsv.num * rsv.den - rsv.num * lsv.den;
+		return result;
+	}
 }
 
 
 Fraction operator*(const Fraction& lsv, const Fraction& rsv)
 {
-	// TODO: вставьте здесь оператор return
+	Fraction result;
+	result.num = { lsv.num * rsv.num };
+	result.den = { lsv.den * rsv.den };
+	return result;
 }
 
 
 Fraction operator/(const Fraction& lsv, const Fraction& rsv)
 {
-	// TODO: вставьте здесь оператор return
+	Fraction result;
+	result.num = { lsv.num * rsv.den };
+	result.den = { lsv.den * rsv.num };
+	return result;
+}
+
+
+
+
+std::ostream& operator<<(std::ostream& out, const Fraction& obj)
+{
+	return out << obj.GetNumerator() << '/' << obj.GetDenominator();
+}
+
+std::istream& operator>>(std::istream& in, const Fraction& obj)
+{
+	int num, den;
+	in >> num >> den;
 }
